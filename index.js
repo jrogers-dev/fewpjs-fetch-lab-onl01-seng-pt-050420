@@ -17,5 +17,5 @@ function renderBooks(books) {
 }
 
 document.addEventListener('DOMContentLoaded', function() {
-  renderBooks(fetchBooks()[0]);
+  console.log(fetchBooks());
 })
