@@ -1,10 +1,10 @@
 function fetchBooks() {
-  return fetch('https://anapioficeandfire.com/api/books')
+  let superfetch =  fetch('https://anapioficeandfire.com/api/books')
     .then(function(response) { return response.json(); })
     .then(function(response) { return response; })
   ;
-  
-  
+  renderBooks(superfetch);
+  return superfetch;
 }
 
 function renderBooks(books) {
@@ -17,5 +17,5 @@ function renderBooks(books) {
 }
 
 document.addEventListener('DOMContentLoaded', function() {
-  console.log(fetchBooks()["PromiseValue"]);
+  fetchBooks();
 })
