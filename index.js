@@ -12,6 +12,6 @@ function renderBooks(books) {
 }
 
 document.addEventListener('DOMContentLoaded', function() {
-  let fetchedBooks = fetchBooks().then(function(response){ return response.json()});
+  let fetchedBooks = fetchBooks().then(function(response){ return response.json()})[1];
   renderBooks(fetchedBooks);
 })
