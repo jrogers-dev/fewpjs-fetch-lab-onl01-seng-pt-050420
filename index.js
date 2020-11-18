@@ -1,9 +1,8 @@
 function fetchBooks() {
   let superfetch =  fetch('https://anapioficeandfire.com/api/books')
     .then(function(response) { return response.json(); })
-    .then(function(response) { return response; })
+    .then(function(response) { renderBooks(response); })
   ;
-  renderBooks(superfetch);
   return superfetch;
 }
 
