@@ -1,10 +1,5 @@
 function fetchBooks() {
-  let superfetch = fetch('https://anapioficeandfire.com/api/books')
-  .then(function(response) {
-    return response.json();
-  });
-  
-  return superfetch;
+  return fetch('https://anapioficeandfire.com/api/books');
 }
 
 function renderBooks(books) {
@@ -17,5 +12,5 @@ function renderBooks(books) {
 }
 
 document.addEventListener('DOMContentLoaded', function() {
-  renderBooks(fetchBooks());
+  let fetchedBooks = fetchBooks().then(function(response){ return response.json()});
 })
